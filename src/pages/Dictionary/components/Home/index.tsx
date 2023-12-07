@@ -1,5 +1,16 @@
+import { useState } from 'react';
+import { DictionaryFetchWordResponse } from 'types/index';
+import data from '../../../../../mock-data.json';
+import Entry from '../Entry';
 import SearchBar from '../SearchBar';
 
 export default function Home() {
-  return <SearchBar />;
+  const [entry, setEntry] = useState<DictionaryFetchWordResponse[]>(data);
+
+  return (
+    <>
+      <SearchBar />
+      <Entry entry={entry} />
+    </>
+  );
 }

@@ -1,25 +1,28 @@
-type Phonetic = {
-  text: string;
+export type Phonetic = {
+  [key: string]: string | undefined | {};
+  text?: string;
   audio?: string;
+  sourceUrl?: string;
+  licence?: {};
 };
 
-type Meaning = {
+export type Meaning = {
   partOfSpeech: string;
   definitions: Definition[];
-  synonyms: string[];
-  antonyms: string[];
+  synonyms: string[] | [];
+  antonyms: string[] | [];
 };
 
-type Definition = {
+export type Definition = {
   definition: string;
   example?: string;
-  synonyms: string[];
-  antonyms: string[];
+  synonyms: string[] | [];
+  antonyms: string[] | [];
 };
 
 export type DictionaryFetchWordResponse = {
   word: string;
-  phonetic: string;
+  phonetic?: string;
   phonetics: Phonetic[];
   meanings: Meaning[];
   sourceUrls: string[];
