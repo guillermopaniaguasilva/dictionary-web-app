@@ -7,13 +7,13 @@ export const SearchContainer = styled.div`
   margin-top: 24px;
 `;
 
-export const SearchInput = styled.input<{ hasError: boolean }>`
+export const SearchInput = styled.input<{ $hasError: boolean }>`
   outline: none;
   width: 100%;
   padding: 16px 24px;
   border-radius: 16px;
-  border: ${({ theme, hasError }) =>
-    hasError ? '1px solid' + theme.colors.red : 'none'};
+  border: ${({ theme, $hasError }) =>
+    $hasError ? '1px solid' + theme.colors.red : 'none'};
   background-color: ${({ theme }) =>
     theme.isDarkThemeOn ? theme.colors.lightBlack : theme.colors.lighterGrey};
   font-family: ${({ theme }) => theme.font};
@@ -24,8 +24,8 @@ export const SearchInput = styled.input<{ hasError: boolean }>`
   &:focus,
   &:focus-visible {
     border: 1px solid
-      ${({ theme, hasError }) =>
-        hasError ? theme.colors.red : theme.colors.purple};
+      ${({ theme, $hasError }) =>
+        $hasError ? theme.colors.red : theme.colors.purple};
   }
 
   &::placeholder {

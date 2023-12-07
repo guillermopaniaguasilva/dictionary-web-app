@@ -40,7 +40,7 @@ export default function Dropdown() {
         aria-labelledby="dropdownMenuButton"
       >
         {['Mono', 'Serif', 'Sans Serif'].map((font) => (
-          <li>
+          <li key={font}>
             <a
               style={{
                 color: `${

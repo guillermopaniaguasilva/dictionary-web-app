@@ -30,7 +30,7 @@ export default function SearchBar() {
             setWord(e.target.value);
             setHasError(false);
           }}
-          hasError={hasError}
+          $hasError={hasError}
         />
         <SearchIcon src={searchIcon} onClick={handleSubmit} />
       </SearchContainer>
