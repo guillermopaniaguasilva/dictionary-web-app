@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <>
-      <SearchBar />
+      <SearchBar setEntry={setEntry} />
       <Entry entry={entry} />
     </>
   );

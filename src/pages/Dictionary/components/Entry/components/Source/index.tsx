@@ -7,7 +7,10 @@ type SourceProps = {
 
 export default function Source({ source }: SourceProps) {
   return (
-    <div className="border-top pt-4">
+    <div
+      style={{ marginTop: '34px', marginBottom: '63px' }}
+      className="border-top pt-4"
+    >
       <Title>Source</Title>
       <div className="d-flex">
         <Link className="text-truncate" href={source}>

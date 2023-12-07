@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  height: 100vh;
   background-color: ${({ theme }) =>
     theme.isDarkThemeOn ? theme.colors.black : theme.colors.white};
 

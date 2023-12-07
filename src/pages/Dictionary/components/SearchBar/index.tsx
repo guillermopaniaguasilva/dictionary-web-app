@@ -1,5 +1,6 @@
 import searchIcon from 'assets/images/icon-search.svg';
 import { FormEvent, useState } from 'react';
+import { DictionaryFetchWordResponse } from 'types/index';
 import {
   ErrorMessage,
   SearchContainer,
@@ -7,7 +8,11 @@ import {
   SearchInput,
 } from './styles';
 
-export default function SearchBar() {
+type SearchBarProps = {
+  setEntry: (entry: DictionaryFetchWordResponse[]) => void;
+};
+
+export default function SearchBar({}: SearchBarProps) {
   const [word, setWord] = useState('');
   const [hasError, setHasError] = useState(false);
 
