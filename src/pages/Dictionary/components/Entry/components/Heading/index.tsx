@@ -1,14 +1,19 @@
 import playIcon from 'assets/images/icon-play.svg';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Phonetic } from 'types/index';
 import { Phonetics, Word } from './styles';
 
 type PhoneticsProps = {
   phonetics: Phonetic[];
   word: string;
+  setSource: (source: string | undefined) => void;
 };
 
-export default function Heading({ phonetics, word }: PhoneticsProps) {
+export default function Heading({
+  phonetics,
+  word,
+  setSource,
+}: PhoneticsProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const phonetic: Partial<Phonetic> = {};
@@ -19,6 +24,12 @@ export default function Heading({ phonetics, word }: PhoneticsProps) {
       }
     }
   });
+
+  useEffect(() => {
+    if (phonetic) {
+      setSource(phonetic.sourceUrl);
+    }
+  }, [phonetic]);
 
   return (
     <div className="d-flex mt-4">
