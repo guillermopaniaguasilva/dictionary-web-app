@@ -14,5 +14,8 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    globals: {
+      __dirname: true,
+    },
   },
-}
+};
