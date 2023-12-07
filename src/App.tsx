@@ -1,3 +1,10 @@
+import Dictionary from './pages/Dictionary';
+import { Wrapper } from './pages/Dictionary/components/MainWrapper/styles';
+
 export default function App() {
-  return <div>App</div>;
+  return (
+    <Wrapper $darkTheme={false}>
+      <Dictionary />
+    </Wrapper>
+  );
 }

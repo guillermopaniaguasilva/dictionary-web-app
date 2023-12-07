@@ -7,20 +7,32 @@ const breakpoints = {
 };
 
 const colors = {
-  purple: '#A729F5',
-  darkNavy: '#1E2A32',
-  navy: '#3B4D66',
-  greyNavy: '#626C7F',
-  lightBluish: '#ABC1E1',
-  lightGrey: '#F4F6FA',
+  black: '#050505',
+  lightBlack: '#1F1F1F',
+  lighterBlack: '#2D2D2D',
+  lightestBlack: '#3A3A3A',
+  grey: '#757575',
+  lightGrey: '#E9E9E9',
+  lighterGrey: '#F4F4F4',
   white: '#FFFFFF',
-  green: '#26D782',
-  red: '#EE5454',
+  purple: '#A445ED',
+  red: '#FF5252',
 };
 
 const fontSizes = {
-  paragraph: '16px',
-  heading: '40px',
+  headingL: '64px',
+  headingM: '24px',
+  headingS: '20px',
+  bodyM: '18px',
+  bodyS: '14px',
+};
+
+const fontLineHeights = {
+  headingL: '77px',
+  headingM: '29px',
+  headingS: '24px',
+  bodyM: '24px',
+  bodyS: '17px',
 };
 
 const fontWeights = {
@@ -31,7 +43,9 @@ const fontWeights = {
 };
 
 const fontFamilies = {
-  Rubik: 'Rubik',
+  Mono: 'Inconsolata',
+  Serif: 'Inter',
+  'Sans Serif': 'Lora',
 };
 
 declare module 'styled-components' {
@@ -42,19 +56,23 @@ declare module 'styled-components' {
       desktop: string;
     };
     colors: {
-      purple: string;
-      darkNavy: string;
-      navy: string;
-      greyNavy: string;
-      lightBluish: string;
+      black: string;
+      lightBlack: string;
+      lighterBlack: string;
+      lightestBlack: string;
+      grey: string;
       lightGrey: string;
+      lighterGrey: string;
       white: string;
-      green: string;
+      purple: string;
       red: string;
     };
     fontSizes: {
-      paragraph: string;
-      heading: string;
+      headingL: string;
+      headingM: string;
+      headingS: string;
+      bodyM: string;
+      bodyS: string;
     };
     fontWeights: {
       extraLight: number;
@@ -62,9 +80,21 @@ declare module 'styled-components' {
       normal: number;
       bold: number;
     };
-    fontFamilies: {
-      Rubik: string;
+    fontLineHeights: {
+      headingL: string;
+      headingM: string;
+      headingS: string;
+      bodyM: string;
+      bodyS: string;
     };
+    fontFamilies: {
+      [key: string]: string;
+      Mono: string;
+      Serif: string;
+      'Sans Serif': string;
+    };
+    isDarkThemeOn: boolean;
+    font: string;
   }
 }
 
@@ -72,8 +102,11 @@ const theme: DefaultTheme = {
   breakpoints,
   colors,
   fontSizes,
+  fontLineHeights,
   fontWeights,
   fontFamilies,
+  isDarkThemeOn: false,
+  font: 'Inconsolata',
 };
 
 export default theme;
