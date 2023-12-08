@@ -1,6 +1,7 @@
 import { PropsWithChildren } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { useDictionaryStore } from '../pages/Dictionary/store';
+import GlobalStyles from './GlobalStyles';
 import theme from './index';
 
 export default function DynamicThemeProvider({ children }: PropsWithChildren) {
@@ -13,5 +14,10 @@ export default function DynamicThemeProvider({ children }: PropsWithChildren) {
     font,
   };
 
-  return <ThemeProvider theme={dynamicTheme}>{children}</ThemeProvider>;
+  return (
+    <ThemeProvider theme={dynamicTheme}>
+      <GlobalStyles />
+      {children}
+    </ThemeProvider>
+  );
 }

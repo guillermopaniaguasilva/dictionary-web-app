@@ -5,6 +5,9 @@ export const HeaderContainer = styled.header`
   height: 72px;
   padding: 16px 24px;
   display: flex;
-  color: ${({ theme }) => (theme.isDarkThemeOn ? 'blue' : 'pink')};
   font-family: ${({ theme }) => theme.font};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    padding: 16px 0;
+  }
 `;

@@ -9,6 +9,9 @@ export const Wrapper = styled.div`
     theme.isDarkThemeOn ? theme.colors.black : theme.colors.white};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 48px;
   }
 `;
 
@@ -19,8 +22,7 @@ export const Main = styled.main`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     margin-top: 85px;
-    width: calc(100% - 280px);
+    width: 100%;
   }
 `;
