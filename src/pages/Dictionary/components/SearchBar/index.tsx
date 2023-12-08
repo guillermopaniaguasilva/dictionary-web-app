@@ -1,6 +1,7 @@
 import searchIcon from 'assets/images/icon-search.svg';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { DictionaryFetchWordResponse } from 'types/index';
+import { useFetchDefinition } from '../../../../hooks/useFetchWord';
 import {
   ErrorMessage,
   SearchContainer,
@@ -9,20 +10,38 @@ import {
 } from './styles';
 
 type SearchBarProps = {
-  setEntry: (entry: DictionaryFetchWordResponse[]) => void;
+  setEntry: (entry: DictionaryFetchWordResponse[] | null) => void;
+  setFetchError: (errorStatus: boolean) => void;
 };
 
-export default function SearchBar({}: SearchBarProps) {
+export default function SearchBar({ setEntry, setFetchError }: SearchBarProps) {
   const [word, setWord] = useState('');
   const [hasError, setHasError] = useState(false);
+
+  const { data, isLoading, error } = useFetchDefinition(word);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
     if (word === '') return setHasError(true);
-
-    console.log('word', word); //TODO: implement here request to API
   };
+
+  useEffect(() => {
+    if (word === '') {
+      setEntry(null);
+      setFetchError(false);
+    }
+  }, [word]);
+
+  useEffect(() => {
+    if (isLoading) return;
+
+    if (error) setFetchError(true);
+
+    if (data) {
+      setEntry(data);
+    }
+  }, [data, isLoading, error]);
 
   return (
     <form onSubmit={handleSubmit}>

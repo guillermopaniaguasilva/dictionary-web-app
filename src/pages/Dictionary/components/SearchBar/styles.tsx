@@ -5,6 +5,10 @@ export const SearchContainer = styled.div`
   display: flex;
   align-items: center;
   margin-top: 24px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    margin-top: 0;
+  }
 `;
 
 export const SearchInput = styled.input<{ $hasError: boolean }>`

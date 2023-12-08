@@ -1,16 +1,18 @@
 import { useState } from 'react';
 import { DictionaryFetchWordResponse } from 'types/index';
-import data from '../../../../../mock-data.json';
 import Entry from '../Entry';
 import SearchBar from '../SearchBar';
 
 export default function Home() {
-  const [entry, setEntry] = useState<DictionaryFetchWordResponse[]>(data);
+  const [entry, setEntry] = useState<DictionaryFetchWordResponse[] | null>(
+    null
+  );
+  const [fetchError, setFetchError] = useState<boolean>(false);
 
   return (
     <>
-      <SearchBar setEntry={setEntry} />
-      <Entry entry={entry} />
+      <SearchBar setEntry={setEntry} setFetchError={setFetchError} />
+      <Entry entry={entry} fetchError={fetchError} />
     </>
   );
 }
