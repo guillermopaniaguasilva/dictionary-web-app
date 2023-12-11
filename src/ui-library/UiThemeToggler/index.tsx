@@ -1,14 +1,16 @@
 import MoonIcon from 'assets/icons';
 import theme from 'theme/index';
-import { useDictionaryStore } from '../../pages/Home/store';
 import { StyledSwitch } from './styles';
 
-export default function UiThemeToggler() {
-  const isDarkThemeOn = useDictionaryStore((state) => state.isDarkThemeOn);
-  const switchToDarkTheme = useDictionaryStore(
-    (state) => state.switchToDarkTheme
-  );
+type UiThemeTogglerProps = {
+  isDarkThemeOn: boolean;
+  switchToDarkTheme: () => void;
+};
 
+export default function UiThemeToggler({
+  isDarkThemeOn,
+  switchToDarkTheme,
+}: UiThemeTogglerProps) {
   const moonIcon = isDarkThemeOn ? (
     <MoonIcon color={theme.colors.purple} width={20} height={20} />
   ) : (

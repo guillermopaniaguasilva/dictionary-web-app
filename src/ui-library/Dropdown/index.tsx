@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import theme from 'theme/index';
 import arrowDownIcon from '../../assets/images/icon-arrow-down.svg';
-import { useDictionaryStore } from '../../pages/Home/store';
 import { CustomDropdown } from './styles';
 
-export default function Dropdown() {
+type DropdownProps = {
+  changeFont: (_: string) => void;
+  isDarkThemeOn: boolean;
+};
+
+export default function Dropdown({ changeFont, isDarkThemeOn }: DropdownProps) {
   const [currentFont, setCurrentFont] = useState('Mono');
-  const changeFont = useDictionaryStore((state) => state.changeFont);
-  const isDarkThemeOn = useDictionaryStore((state) => state.isDarkThemeOn);
 
   const handleOptionClick = (font: string) => {
     setCurrentFont(font);
