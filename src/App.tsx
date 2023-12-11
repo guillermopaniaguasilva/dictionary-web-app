@@ -1,5 +1,5 @@
-import Dictionary from './pages/Dictionary';
-import { Wrapper } from './pages/Dictionary/components/MainWrapper/styles';
+import Wrapper from 'ui-library/Wrapper';
+import Dictionary from './pages/Home';
 
 export default function App() {
   return (

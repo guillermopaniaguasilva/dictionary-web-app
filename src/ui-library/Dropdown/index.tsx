@@ -1,7 +1,7 @@
-import arrowDownIcon from 'assets/images/icon-arrow-down.svg';
 import { useState } from 'react';
 import theme from 'theme/index';
-import { useDictionaryStore } from '../../store';
+import arrowDownIcon from '../../assets/images/icon-arrow-down.svg';
+import { useDictionaryStore } from '../../pages/Home/store';
 import { CustomDropdown } from './styles';
 
 export default function Dropdown() {

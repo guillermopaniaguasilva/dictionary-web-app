@@ -25,16 +25,16 @@ export default function Meaning({ meaning }: MeaningProps) {
       <DefinitionsList>
         {meaning.definitions
           .map((d) => d.definition)
-          .map((m) => (
-            <Definition>{m}</Definition>
+          .map((m, i) => (
+            <Definition key={i}>{m}</Definition>
           ))}
       </DefinitionsList>
       {meaning.synonyms.length > 0 && (
         <div className="d-flex">
           <SubHeading>Synonyms</SubHeading>
-          {meaning.synonyms.map((s) => (
-            <Synonym>{s}</Synonym>
-          ))}
+          {meaning.synonyms
+            .map((s, i) => <Synonym key={i}>{s}</Synonym>)
+            .slice(0, 3)}
         </div>
       )}
     </div>

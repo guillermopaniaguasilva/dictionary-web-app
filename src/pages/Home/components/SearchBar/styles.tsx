@@ -14,6 +14,8 @@ export const SearchContainer = styled.div`
 export const SearchInput = styled.input<{ $hasError: boolean }>`
   outline: none;
   width: 100%;
+  color: ${({ theme }) =>
+    theme.isDarkThemeOn ? theme.colors.white : theme.colors.black};
   padding: 16px 24px;
   border-radius: 16px;
   border: ${({ theme, $hasError }) =>

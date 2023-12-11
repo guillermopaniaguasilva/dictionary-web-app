@@ -1,6 +1,6 @@
 import bookIcon from 'assets/images/logo.svg';
-import Dropdown from '../Dropdown';
-import UiThemeToggler from '../UiThemeToggler';
+import Dropdown from '../../../../ui-library/Dropdown';
+import UiThemeToggler from '../../../../ui-library/UiThemeToggler';
 import { HeaderContainer } from './styles';
 
 export default function Header() {

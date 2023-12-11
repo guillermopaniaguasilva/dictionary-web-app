@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import arrowIcon from '../../../../assets/images/icon-arrow-down.svg';
+import arrowIcon from '../../assets/images/icon-arrow-down.svg';
 
 export const CustomDropdown = styled.div`
   &.custom-dropdown {
@@ -20,8 +20,18 @@ export const CustomDropdown = styled.div`
     .dropdown-item:focus,
     .dropdown-item:hover {
       background-color: ${({ theme }) =>
-        theme.isDarkThemeOn && theme.colors.purple};
+        theme.isDarkThemeOn ? 'transparent' : theme.colors.white};
+      color: ${({ theme }) => theme.colors.purple} !important;
     }
+  }
+
+  & ul {
+    transform: translate3d(-86px, 40px, 0px) !important;
+    border-radius: 16px;
+    background: ${({ theme }) => theme.colors.white};
+    box-shadow: 0px 5px 30px 0px
+      ${({ theme }) =>
+        theme.isDarkThemeOn ? theme.colors.purple : 'rgba(0, 0, 0, 0.1)'};
   }
 
   .btn-check:focus + .btn,

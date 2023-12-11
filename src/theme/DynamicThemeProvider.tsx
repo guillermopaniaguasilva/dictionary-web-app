@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { useDictionaryStore } from '../pages/Dictionary/store';
+import { useDictionaryStore } from '../pages/Home/store';
 import GlobalStyles from './GlobalStyles';
 import theme from './index';
 

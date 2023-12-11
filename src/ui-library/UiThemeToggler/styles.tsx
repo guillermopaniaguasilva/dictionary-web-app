@@ -6,6 +6,7 @@ export const StyledSwitch = styled.div`
     border-color: ${({ theme }) => theme.colors.grey};
     border: none;
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(255,255,255,1.0)'/></svg>");
+    cursor: pointer;
   }
 
   &.form-switch .form-check-input:checked {

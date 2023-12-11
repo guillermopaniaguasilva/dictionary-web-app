@@ -1,6 +1,6 @@
 import MoonIcon from 'assets/icons';
 import theme from 'theme/index';
-import { useDictionaryStore } from '../../store';
+import { useDictionaryStore } from '../../pages/Home/store';
 import { StyledSwitch } from './styles';
 
 export default function UiThemeToggler() {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,14 +15,4 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Main = styled.main`
-  width: calc(100% - 48px);
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    margin-top: 50px;
-  }
-`;
+export default Wrapper;

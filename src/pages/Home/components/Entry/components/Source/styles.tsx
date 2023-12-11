@@ -20,6 +20,10 @@ export const Link = styled.a`
   line-height: normal;
   text-decoration-line: underline;
   display: block;
-  max-width: 273px;
+  max-width: 358px;
   margin-right: 8px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    max-width: 500px;
+  }
 `;
